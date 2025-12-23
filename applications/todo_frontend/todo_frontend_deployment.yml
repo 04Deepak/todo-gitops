@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: todo-frontend
-        image: ghcr.io/04deepak/todo-frontend:0ce9b11e25c565b5306553aa7e6caebb5a217017
+        image: ghcr.io/04deepak/todo-frontend:10ef66a6bbefea6b47ac1e997de75ca93c4bbadb
         ports:
         - containerPort: 80
         resources:
