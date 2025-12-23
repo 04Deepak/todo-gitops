@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: todo-frontend
-        image: 21deepak/todo-frontend:fd03b3d350c0ccb0b90c8bb843ff52932430b4ea
+        image: 21deepak/todo-frontend:1.0
         ports:
         - containerPort: 80
         resources:
@@ -25,6 +25,7 @@ spec:
             memory: "256Mi"
 
             cpu: "500m"
+
 
 
 
