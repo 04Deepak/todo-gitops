@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: todo-frontend
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: todo-frontend
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: todo-frontend
-        image: 21deepak/todo-frontend:1.0
+        image: 21deepak/todo-frontend:latest
         ports:
         - containerPort: 80
         resources:
@@ -25,3 +25,4 @@ spec:
             memory: "256Mi"
 
             cpu: "500m"
+
