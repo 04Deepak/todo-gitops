@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: todo-frontend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: todo-frontend
@@ -25,4 +25,5 @@ spec:
             memory: "256Mi"
 
             cpu: "500m"
+
 
