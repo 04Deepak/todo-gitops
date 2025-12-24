@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: argocd-repo-server
+  namespace: argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: argocd-repo-server
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: argocd-repo-server
+    spec:
+      serviceAccountName: argocd-repo-server
+      containers:
+        - name: repo-server
+          image: quay.io/argoproj/argocd:v3.2.2
+          imagePullPolicy: IfNotPresent
+          env:
+            # 🔥 FIX FOR GITHUB TIMEOUT
+            - name: ARGOCD_GIT_REQUEST_TIMEOUT
+              value: "120s"
+            - name: ARGOCD_GIT_ATTEMPTS_COUNT
+              value: "3"
+
+            # existing required envs (do NOT remove)
+            - name: ARGOCD_REPO_SERVER_LOGFORMAT
+              value: "text"
+            - name: ARGOCD_REPO_SERVER_LOGLEVEL
+              value: "info"
+          ports:
+            - containerPort: 8081
+              name: server
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: server
+            initialDelaySeconds: 10
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: server
+            initialDelaySeconds: 10
+            periodSeconds: 10
