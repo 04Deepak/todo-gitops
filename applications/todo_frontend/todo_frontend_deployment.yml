@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: todo-frontend
-        image: 21deepak/todo-frontend:dev
+        image: 21deepak/todo-frontend:83c64b54f1494de561ce3feb2931d54b60b08021
         ports:
         - containerPort: 80
         resources:
