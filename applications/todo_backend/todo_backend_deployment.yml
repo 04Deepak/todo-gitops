@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: todo-backend
-        image: ghcr.io/04deepak/todo-backend:latest
+        image: 21deepak/todo-backend:1.0
         ports:
         - containerPort: 5000
         env:

@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: todo-frontend
-        image: 21deepak/todo-frontend:07858e36ab5c0aa6bccd2fc707ed026d37491dad
+        image: 21deepak/todo-frontend:dev
         ports:
         - containerPort: 80
         resources:
@@ -26,46 +26,4 @@ spec:
             memory: "256Mi"
 
             cpu: "500m"
-
-
-
-
-# apiVersion: apps/v1
-# kind: Deployment
-# metadata:
-#   name: todo-frontend
-#   namespace: default
-# spec:
-#   replicas: 4
-#   selector:
-#     matchLabels:
-#       app: todo-frontend
-#   template:
-#     metadata:
-#       labels:
-#         app: todo-frontend
-#     spec:
-#       imagePullSecrets:
-#         - name: ghcr-secret
-#       containers:
-#         - name: todo-frontend
-#           image: ghcr.io/04deepak/todo-frontend:760200a288a9f39d835dc52c43a4016973758652
-#           ports:
-#             - containerPort: 80
-#           resources:
-#             requests:
-#               memory: "128Mi"
-#               cpu: "100m"
-#             limits:
-#               memory: "256Mi"
-#               cpu: "500m"
-
-
-
-
-
-
-
-
-
 
