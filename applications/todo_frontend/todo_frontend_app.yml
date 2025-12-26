@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/04Deepak/todo-gitops    # Replace it with your forked repo
+    repoURL: https://github.com/04Deepak/todo-gitops.git   # Replace it with your forked repo
     targetRevision: main
     path: applications/todo_frontend
   destination:
