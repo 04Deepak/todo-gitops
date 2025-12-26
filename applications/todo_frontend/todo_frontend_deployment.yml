@@ -46,7 +46,7 @@ spec:
       - name: todo-frontend
         image: 21deepak/todo-frontend:dev
         ports:
-        - containerPort: 80
+        - containerPort: 3000
         resources:
           requests:
             memory: "128Mi"
@@ -54,6 +54,7 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
+
 
 
 
