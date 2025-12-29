@@ -8,12 +8,12 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/04Deepak/todo-gitops
+    repoURL: https://github.com/04Deepak/todo-gitops.git
     targetRevision: main
     path: applications/todo_backend
   destination:
     server: https://kubernetes.default.svc
-    namespace: todo
+    namespace: default
   syncPolicy:
     automated:
       prune: true
