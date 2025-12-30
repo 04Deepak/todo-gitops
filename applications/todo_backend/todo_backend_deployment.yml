@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: todo-backend
-        image: 21deepak/todo-backend:1.0
+        image: 21deepak/todo-backend:18c7fe655c31dd262bd360b47a249c15dd7a7d27
         ports:
         - containerPort: 5000
         env:
