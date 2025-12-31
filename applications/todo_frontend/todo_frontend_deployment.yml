@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: todo-frontend
+  labels:
+    app: todo-frontend
 spec:
   replicas: 2
   selector:
@@ -14,7 +16,6 @@ spec:
     spec:
       containers:
       - name: todo-frontend
-        # image: 21deepak/todo-frontend:dev
         image: 21deepak/todo-frontend:7cbf87d999b486a7e34b665904ea5d5be124c90a
         ports:
         - containerPort: 80
@@ -25,16 +26,3 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
-
-
-
-
-
-
-
-
-
-
-
-
-
