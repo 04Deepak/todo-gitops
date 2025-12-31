@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/04Deepak/todo-gitops.git    # Replace it with your forked repo
-    targetRevision: main
+    targetRevision: prod
     path: applications/todo_frontend
   destination:
     server: https://kubernetes.default.svc   # Replace with your Cluster Url, To get run: `argocd cluster list`
