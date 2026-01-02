@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo-backend-app
+  namespace: argocd
+  # annotations:
+  #   argocd.argoproj.io/sync-options: CreateNamespace=true
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/04Deepak/todo-gitops.git
+    targetRevision: main
+    path: applications/todo_backend
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
